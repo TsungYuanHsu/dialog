@@ -43,32 +43,6 @@ def count(dialog):
     print('Viki sent', pic_counter_Viki, 'pictures')
 
 
-# Count emoji
-def count_emoji(pair_dialog):
-    emoji_counter_Allen = 0
-    emoji_counter_Viki = 0
-    for i in pair_dialog:
-        if i[1] == 'Allen':
-            emoji_counter_Allen += i[2].count('貼圖')
-        elif i[1] == 'Viki':
-            emoji_counter_Viki += i[2].count('貼圖')
-    print('Allen sent', emoji_counter_Allen, 'emojis')
-    print('Viki sent', emoji_counter_Viki, 'emojis')
-
-
-# Count pictures
-def count_pic(pair_dialog):
-    pic_counter_Allen = 0
-    pic_counter_Viki = 0
-    for i in pair_dialog:
-        if i[1] == 'Allen':
-            pic_counter_Allen += i[2].count('圖片')
-        elif i[1] == 'Viki':
-            pic_counter_Viki += i[2].count('圖片')
-    print('Allen sent', pic_counter_Allen, 'pictures')
-    print('Viki sent', pic_counter_Viki, 'pictures')
-
-
 # Write function to output.txt
 def write(filename, pair_dialog):
     with open(filename, 'w', encoding = 'utf-8-sig') as f:
@@ -78,7 +52,6 @@ def write(filename, pair_dialog):
 def main():
     dialog = read('LINE-Viki.txt')
     count(dialog)
-
     # write('LINE-Viki-output.txt', pair_dialog)
 
 main()
